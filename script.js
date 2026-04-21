@@ -18,11 +18,30 @@ function fetchWeather(lat, lon) {
             } else if (temp > 35 || aqi > 100) {
                 risk = "MEDIUM";
             }
+            if (risk === "HIGH") {
+    showAlert("⚠️ High Risk! Avoid going outside.");
+}
             function getRisk(temp, humidity) {
     if (temp > 40) return "🔥 EXTREME HEAT RISK";
     if (temp > 35) return "⚠️ HIGH HEAT RISK";
     if (humidity > 80) return "🦟 DENGUE RISK";
     return "✅ LOW RISK";
+}
+            function displayAlert(message) {
+    document.getElementById("alertBox").innerText = message;
+}
+            if (risk === "HIGH") {
+    displayAlert("🚨 Heat risk is HIGH! Stay indoors.");
+}
+else if (risk === "MEDIUM") {
+    displayAlert("⚠️ Moderate risk. Stay hydrated.");
+}
+else {
+    displayAlert("✅ Conditions are safe.");
+}
+            function sendSMS() {
+    document.getElementById("smsStatus").innerText =
+        "📩 SMS Sent: Heat risk high! Stay indoors.";
 }
             function getAdvice(temp) {
     let age = document.getElementById("age").value;
