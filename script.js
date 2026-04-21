@@ -55,6 +55,9 @@ function fetchWeather(lat, lon) {
     document.getElementById("smsStatus").innerText =
         "📩 SMS Alert Sent: Heat risk high! Stay indoors.";
 }
+            function showAlert(message) {
+    alert(message);
+}
             document.getElementById("advice").innerText = getAdvice(temp);
 
             document.getElementById("data").innerHTML = `
