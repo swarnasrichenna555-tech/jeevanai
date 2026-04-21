@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    margin-top: 50px;
+}
+
+.high {
+    color: red;
+}
+
+.medium {
+    color: orange;
+}
+
+.low {
+    color: green;
+}
